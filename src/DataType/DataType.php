@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\RedisManager\DataType;
+namespace Bikaraan\BCore\RedisManager\DataType;
 
 use Illuminate\Redis\Connections\Connection;
 

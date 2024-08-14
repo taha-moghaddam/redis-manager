@@ -1,21 +1,21 @@
 <?php
 
-namespace Encore\Admin\RedisManager;
+namespace Bikaraan\BCore\RedisManager;
 
-use Encore\Admin\Extension;
-use Encore\Admin\RedisManager\DataType\DataType;
-use Encore\Admin\RedisManager\DataType\Hashes;
-use Encore\Admin\RedisManager\DataType\Lists;
-use Encore\Admin\RedisManager\DataType\Sets;
-use Encore\Admin\RedisManager\DataType\SortedSets;
-use Encore\Admin\RedisManager\DataType\Strings;
+use Bikaraan\BCore\Extension;
+use Bikaraan\BCore\RedisManager\DataType\DataType;
+use Bikaraan\BCore\RedisManager\DataType\Hashes;
+use Bikaraan\BCore\RedisManager\DataType\Lists;
+use Bikaraan\BCore\RedisManager\DataType\Sets;
+use Bikaraan\BCore\RedisManager\DataType\SortedSets;
+use Bikaraan\BCore\RedisManager\DataType\Strings;
 use Illuminate\Http\Request;
 use Illuminate\Redis\Connections\Connection;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Redis;
-use Predis\Collection\Iterator\Keyspace;
-use Predis\Pipeline\Pipeline;
+// use Predis\Collection\Iterator\Keyspace;
+// use Predis\Pipeline\Pipeline;
 
 /**
  * Class RedisManager.
@@ -173,26 +173,31 @@ class RedisManager extends Extension
         $client = $this->getConnection();
         $keys = [];
 
-        foreach (new Keyspace($client->client(), $pattern) as $item) {
-            $keys[] = $item;
+        $iterator = null;
+        while ($keys_batch = $client->scan($iterator, $pattern, $count)) {
+            \Log::debug(json_encode($keys_batch));
+            foreach ($keys_batch as $key) {
+                $keys[] = $key;
+            }
 
-            if (count($keys) == $count) {
+            if (count($keys) >= $count) {
                 break;
             }
         }
 
         $script = <<<'LUA'
-        local type = redis.call('type', KEYS[1])
-        local ttl = redis.call('ttl', KEYS[1])
+    local type = redis.call('type', KEYS[1])
+    local ttl = redis.call('ttl', KEYS[1])
 
-        return {KEYS[1], type, ttl}
+    return {KEYS[1], type, ttl}
 LUA;
 
-        return $client->pipeline(function (Pipeline $pipe) use ($keys, $script) {
-            foreach ($keys as $key) {
-                $pipe->eval($script, 1, $key);
-            }
-        });
+        $results = [];
+        foreach ($keys as $key) {
+            $results[] = $client->eval($script, 1, $key);
+        }
+
+        return $results;
     }
 
     /**

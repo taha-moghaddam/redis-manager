@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\Admin\RedisManager;
+namespace Bikaraan\BCore\RedisManager;
 
 use Illuminate\Support\ServiceProvider;
 

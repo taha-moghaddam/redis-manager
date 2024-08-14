@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\RedisManager;
+namespace Bikaraan\BCore\RedisManager;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Layout\Content;
+use Bikaraan\BCore\Facades\Admin;
+use Bikaraan\BCore\Layout\Content;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Str;
