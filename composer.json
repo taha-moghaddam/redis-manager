@@ -22,13 +22,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\Admin\\RedisManager\\": "src/"
+            "Bikaraan\\BCore\\RedisManager\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Encore\\Admin\\RedisManager\\RedisManagerServiceProvider"
+                "Bikaraan\\BCore\\RedisManager\\RedisManagerServiceProvider"
             ]
 
         }
