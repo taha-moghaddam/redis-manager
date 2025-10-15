@@ -230,7 +230,7 @@ class RedisController extends BaseController
     protected function renderException(\Exception $exception)
     {
         return sprintf(
-            "<div class='callout callout-warning'><i class='icon fa fa-warning'></i>&nbsp;&nbsp;&nbsp;%s</div>",
+            "<div class='callout callout-warning'><i class='icon far fa-warning'></i>&nbsp;&nbsp;&nbsp;%s</div>",
             str_replace("\n", '<br />', $exception->getMessage())
         );
     }

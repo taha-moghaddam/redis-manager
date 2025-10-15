@@ -6,8 +6,8 @@
                 <h3 class="box-title">Connections</h3>
 
                 <div class="box-tools">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="far fa-minus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="far fa-times"></i></button>
                 </div>
             </div>
             <div class="box-body no-padding">
@@ -16,7 +16,7 @@
 						@if(!empty($connection['host']))
                         <li @if($name == $conn)class="active"@endif>
                             <a href=" {{ route('redis-index', ['conn' => $name]) }}">
-                                <i class="fa fa-database"></i> {{ $name }}  &nbsp;&nbsp;<small>[{{ $connection['host'].':'.$connection['port'] }}]</small>
+                                <i class="far fa-database"></i> {{ $name }}  &nbsp;&nbsp;<small>[{{ $connection['host'].':'.$connection['port'] }}]</small>
                             </a>
                         </li>
 						@endif
@@ -31,9 +31,9 @@
                 <h3 class="box-title">Connection <small><code>{{ $conn }}</code></small></h3>
 
                 <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="far fa-plus"></i>
                     </button>
-                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="far fa-times"></i></button>
                 </div>
             </div>
 

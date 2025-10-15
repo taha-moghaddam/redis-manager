@@ -128,11 +128,11 @@
                 <input class="form-control input-lg" id="console-query" placeholder="Type command">
 
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-primary btn-lg" id="console-send"><i class="fa fa-paper-plane"></i></button>
+                    <button type="button" class="btn btn-primary btn-lg" id="console-send"><i class="far fa-paper-plane"></i></button>
                 </div>
 
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-warning btn-lg" id="console-clear"><i class="fa fa-trash"></i></button>
+                    <button type="button" class="btn btn-warning btn-lg" id="console-clear"><i class="far fa-trash"></i></button>
                 </div>
             </div>
         </div>

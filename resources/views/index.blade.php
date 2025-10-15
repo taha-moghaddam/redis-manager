@@ -7,8 +7,8 @@
         <h3 class="box-title">{{ $conn }}</h3> <small></small>
 
         <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="far fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="far fa-times"></i></button>
         </div>
     </div>
 
@@ -26,14 +26,14 @@
                 <div class="col-sm-offset-2 col-sm-9">
                     <input type="hidden" name="conn" value="{{ $conn }}">
 
-                    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;&nbsp;Search</button>
+                    <button type="submit" class="btn btn-primary btn-sm"><i class="far fa-search"></i>&nbsp;&nbsp;Search</button>
 
-                    <a class="btn btn-danger btn-sm pull-right key-delete-multi"><i class="fa fa-trash"></i>&nbsp;&nbsp;Delete</a>
+                    <a class="btn btn-danger btn-sm pull-right key-delete-multi"><i class="far fa-trash"></i>&nbsp;&nbsp;Delete</a>
 
-                    <a class="btn btn-warning btn-sm pull-right"  style="margin-right: 5px;" href="{{ route('redis-console', ['conn' => $conn]) }}"><i class="fa fa-terminal"></i>&nbsp;&nbsp;Console</a>
+                    <a class="btn btn-warning btn-sm pull-right"  style="margin-right: 5px;" href="{{ route('redis-console', ['conn' => $conn]) }}"><i class="far fa-terminal"></i>&nbsp;&nbsp;Console</a>
 
                     <div class="btn-group pull-right btn-group-sm" style="margin-right: 5px;">
-                        <button type="button" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp;&nbsp;Create</button>
+                        <button type="button" class="btn btn-success"><i class="far fa-plus"></i>&nbsp;&nbsp;Create</button>
                         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
                             <span class="sr-only">Toggle Dropdown</span>
@@ -79,9 +79,9 @@
                     </td>
                     <td>{{ $key[2] }}</td>
                     <td>
-                        <a href="{{ route('redis-edit-key', ['key' => $key[0], 'conn' => $conn]) }}"><i class="fa fa-edit"></i></a>
+                        <a href="{{ route('redis-edit-key', ['key' => $key[0], 'conn' => $conn]) }}"><i class="far fa-edit"></i></a>
                         &nbsp;
-                        <a href="#" class="key-delete" data-key="{{ $key[0] }}"><i class="fa fa-trash"></i></a>
+                        <a href="#" class="key-delete" data-key="{{ $key[0] }}"><i class="far fa-trash"></i></a>
                     </td>
                 </tr>
             @endforeach

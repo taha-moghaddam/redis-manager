@@ -80,7 +80,7 @@
                                     <td>
                                         <a class="list-item" data-type="textarea" data-pk="{{ $index }}" data-url="{{ route('redis-update-key', ['type' => 'list', 'conn' => $conn, 'key' => $data['key']]) }}">{{ $value }}</a></td>
                                     <td>
-                                        <a href="#" class="text-red remove-index" data-index="{{ $index }}"><i class="fa fa-trash"></i></a>
+                                        <a href="#" class="text-red remove-index" data-index="{{ $index }}"><i class="far fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

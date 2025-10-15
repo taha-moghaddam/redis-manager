@@ -86,7 +86,7 @@
                                     <td>
                                         <a class="zset-member" data-type="textarea" data-pk="{{ $member }}" data-url="{{ route('redis-update-key', ['type' => 'zset', 'conn' => $conn, 'key' => $data['key']]) }}">{{ $score }}</a></td>
                                     <td>
-                                        <a href="#" class="text-red remove-key" data-member="{{ $member }}"><i class="fa fa-trash"></i></a>
+                                        <a href="#" class="text-red remove-key" data-member="{{ $member }}"><i class="far fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
